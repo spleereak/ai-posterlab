@@ -13,7 +13,8 @@ const navItems = [
 ]
 export const Sidebar = () => {
   const router = useRouter();
-  const href = usePathname();
+  const link = usePathname();
+  console.log(link);
 
   return(
     <aside className='h-full w-64 p-4 border-r bg-background flex flex-col items-start gap-4'>
@@ -25,7 +26,7 @@ export const Sidebar = () => {
           onClick={() => router.push(path)}
           className={cn(
             'p-2 rounded-xl hover:bg-muted border border-gray-400 transition-colors flex w-[90%] gap-2 items-center justify-start',
-            href === 'path' && 'bg-muted font-semibold'
+            link === path && 'bg-muted font-bold'
           )}
         >
           <Icon className='w-5 h-5' />
