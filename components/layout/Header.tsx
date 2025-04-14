@@ -12,7 +12,7 @@ export const Header = () => {
     <header className="w-fulll h-16 px-6 flex items-center justify-between border-b border-muted bg-background sticky top-0 z-50">
       <h1 className="text-xl font-medium">AI PosterLab</h1>
       <div className="flex gap-4">
-        <Button className='rounded-xl' onClick={() => router.push('/generate')}>
+        <Button className='rounded-xl' onClick={() => router.push('/account')}>
           <User />
           {/* (здесь будет никнейм пользователя) */}
           <span>User</span>

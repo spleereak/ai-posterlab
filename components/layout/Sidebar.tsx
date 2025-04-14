@@ -25,8 +25,8 @@ export const Sidebar = () => {
           title={label}
           onClick={() => router.push(path)}
           className={cn(
-            'p-2 rounded-xl hover:bg-muted border border-gray-400 transition-colors flex w-[90%] gap-2 items-center justify-start',
-            link === path && 'bg-muted font-bold'
+            `p-2 rounded-xl ${link !== path && 'hover:bg-muted'} border border-gray-400 transition-colors flex w-[90%] gap-2 items-center justify-start`,
+            link === path && 'bg-black text-white font-bold'
           )}
         >
           <Icon className='w-5 h-5' />
