@@ -2,7 +2,7 @@
 
 
 import {HeartIcon, Icon, ImageIcon, SparklesIcon} from "lucide-react";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname} from "next/navigation";
 import {cn} from "@/lib/utils";
 import Link from "next/link";
 
@@ -12,7 +12,6 @@ const navItems = [
   { label: 'Избранное', icon: HeartIcon, path: '/saved' }
 ]
 export const Sidebar = () => {
-  const router = useRouter();
   const link = usePathname();
   console.log(link);
 
@@ -23,7 +22,6 @@ export const Sidebar = () => {
           href={path}
           key={label}
           title={label}
-          onClick={() => router.push(path)}
           className={cn(
             `p-2 rounded-xl ${link !== path && 'hover:bg-muted'} border border-gray-400 transition-colors flex w-[90%] gap-2 items-center justify-start`,
             link === path && 'bg-black text-white font-bold'
