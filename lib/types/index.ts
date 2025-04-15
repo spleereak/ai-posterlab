@@ -1,5 +1,5 @@
 export type GeneratedImage = {
-  id: string;
+  id: number;
   prompt: string;
   url: string;
   createdAt: string;

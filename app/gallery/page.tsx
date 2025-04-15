@@ -3,25 +3,25 @@ import {ImageCard} from "@/components/ui/ImageCard";
 const mockImages = [
   {
     id: 1,
-    src: "https://via.placeholder.com/300",
+    url: "https://via.placeholder.com/300",
     prompt: "Заглушка 1",
     createdAt: "2025-04-14",
   },
   {
     id: 2,
-    src: "https://via.placeholder.com/300",
+    url: "https://via.placeholder.com/300",
     prompt: "Заглушка 2",
     createdAt: "2025-04-13",
   },
   {
     id: 3,
-    src: "https://via.placeholder.com/300",
+    url: "https://via.placeholder.com/300",
     prompt: "Заглушка 3",
     createdAt: "2025-04-13",
   },
   {
     id: 4,
-    src: "https://via.placeholder.com/300",
+    url: "https://via.placeholder.com/300",
     prompt: "Заглушка 4",
     createdAt: "2025-04-13",
   }
@@ -34,7 +34,7 @@ export default function GalleryPage() {
         <ImageCard
           key={image.id}
           id={image.id}
-          src={image.src}
+          url={image.url}
           prompt={image.prompt}
           createdAt={image.createdAt}
         />
