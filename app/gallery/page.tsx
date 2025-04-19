@@ -1,4 +1,4 @@
-import {ImageCard} from "@/components/ui/ImageCard";
+import {ImageCard} from "@/components/shared/ImageCard";
 
 const mockImages = [
   {
