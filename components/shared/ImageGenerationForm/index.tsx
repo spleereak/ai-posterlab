@@ -7,6 +7,7 @@ import {Loader2} from "lucide-react";
 import {GenerationArea} from "@/components/shared/ImageGenerationForm/GenerationArea";
 import {SelectSize} from "@/components/shared/ImageGenerationForm/SelectSize";
 import {SelectModel} from "@/components/shared/ImageGenerationForm/SelectModel";
+import {error} from "next/dist/build/output/log";
 
 export function ImageGenerationForm() {
   const [prompt, setPrompt] = useState('');
@@ -14,15 +15,26 @@ export function ImageGenerationForm() {
   const [model, setModel] = useState('Stable Diffusion');
   const [isGenerating, setIsGenerating] = useState(false);
 
-  const handleGenerate = () => {
+  const handleGenerate = async () => {
     if (prompt.trim() === '') return;
 
     setIsGenerating(true);
 
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/generate', {
+        method: 'POST',
+        body: JSON.stringify({ prompt: prompt, size: imageSize }),
+        headers: { "Content-Type": 'application/json' }
+      })
+
+      const data = await res.json();
+      console.log(data);
+    } catch (e: any) {
+      throw new Error(e.message);
+    } finally {
       setIsGenerating(false);
-    }, 3000);
-  };
+    };
+  }
 
   return (
     <div className='rounded-lg shadow-lg p-6 space-y-6'>
